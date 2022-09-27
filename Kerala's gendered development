@@ -1,0 +1,26 @@
+library(readxl)
+
+Fin_Indicators_Kerala <- read_excel("C:/Users/lubi/Desktop/gis/Fin Indicators Kerala.xlsx")
+View(Fin_Indicators_Kerala)
+
+#Histograms
+hist(indicators for kerala$Size of_HH)
+
+#Regression analysis of Female Literacy Rate and Total Population
+
+Reg_LitFPop<-lm(formula = `Lit_F`~`TOT_P`, data = Fin_Indicators_Kerala)
+Summary(Reg_LitFPop)
+
+#Regression analysis of Size of Household and Female Literacy
+
+Reg_litHH<-lm(formula = `Size of_HH`~`Lit_F`, data = Fin_Indicators_Kerala)
+summary(Reg_litHH)
+
+#Plotting a scatter plot
+
+plot(`Size of_HH`~ `Lit_F`, data = Fin_Indicators_Kerala)
+
+#Regression analysis of Sex Ratio and Urban
+
+Reg_Surban<-lm(formula = `Sex Ratio`~`Urban`, data = Fin_Indicators_Kerala)
+summary(Reg_Surban)
